@@ -22,10 +22,6 @@
 		</collection>
 	</resultMap>
 	
-	
-	
-	
-	
 	<insert id="insertSelective">
 		insert into user
 	    <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -58,6 +54,5 @@
 	    </trim>
 	</insert>
 
-	
  
 </mapper>

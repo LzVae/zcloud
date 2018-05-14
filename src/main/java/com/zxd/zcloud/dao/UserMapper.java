@@ -2,6 +2,13 @@ package com.zxd.zcloud.dao;
 
 import com.zxd.zcloud.pojo.User;
 
+/**
+ * 
+ * @ClassName: UserMapper
+ * @Description: TODO
+ * @author zhuxindong
+ * @date 2018年5月14日
+ */
 public interface UserMapper {
 	
 	/**

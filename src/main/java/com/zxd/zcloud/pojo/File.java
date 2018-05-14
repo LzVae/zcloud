@@ -2,7 +2,13 @@ package com.zxd.zcloud.pojo;
 
 import java.sql.Timestamp;
 
-
+/**
+ * 
+ * @ClassName: File
+ * @Description: TODO
+ * @author zhuxindong
+ * @date 2018年5月14日
+ */
 public class File {
     private Integer id;
 

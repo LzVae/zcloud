@@ -2,13 +2,19 @@ package com.zxd.zcloud.pojo;
 
 import java.sql.Timestamp;
 
-
+/**
+ * 
+ * @ClassName: Folder
+ * @Description: TODO
+ * @author zhuxindong
+ * @date 2018年5月14日
+ */
 public class Folder {
     private Integer id;
 
     private String folderName;
 
-    private Folder folderCreator;
+    private User folderCreator;
 
     private Folder folderParent;
 
@@ -30,11 +36,11 @@ public class Folder {
         this.folderName = folderName == null ? null : folderName.trim();
     }
 
-    public Folder getFolderCreator() {
+    public User getFolderCreator() {
         return folderCreator;
     }
 
-    public void setFolderCreator(Folder folderCreator) {
+    public void setFolderCreator(User folderCreator) {
         this.folderCreator = folderCreator;
     }
 
@@ -46,7 +52,7 @@ public class Folder {
         this.folderParent = folderParent;
     }
 
-    public Date getFolderCreatetime() {
+    public Timestamp getFolderCreatetime() {
         return folderCreatetime;
     }
 

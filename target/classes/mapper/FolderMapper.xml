@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zxd.zcloud.dao.FolderMapper">
+  <resultMap id="BaseResultMap" type="com.zxd.zcloud.pojo.Folder">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="folder_name" jdbcType="VARCHAR" property="folderName" />
+    
+    <result column="folder_createtime" jdbcType="TIMESTAMP" property="folderCreatetime" />
+  </resultMap>
+
+</mapper>
