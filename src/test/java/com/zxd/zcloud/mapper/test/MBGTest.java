@@ -1,4 +1,4 @@
-package com.zxd.zcloud.test;
+package com.zxd.zcloud.mapper.test;
 
 import java.io.File;
 import java.io.IOException;

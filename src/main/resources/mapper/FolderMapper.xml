@@ -22,7 +22,8 @@
   
   
   
-  <insert id="insert">
+  <insert id="insert"
+  		useGeneratedKeys="true" keyProperty="id" keyColumn="id">
   	insert into folder(folder_name, folder_creator, folder_parent, folder_createtime)
   	values(#{folderName}, #{folderCreator.id}, #{folderParent.id}, #{folderCreatetime})
   </insert>

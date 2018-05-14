@@ -9,20 +9,23 @@
 		<result column="password" jdbcType="VARCHAR" property="password" />
 		<result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
 		
-		<collection property="folders" ofType="com.zxd.zcloud.pojo.Folder">
-			<id column="fid" jdbcType="INTEGER" property="id"/>
-			<result column="folder_name" jdbcType="VARCHAR" property="foldername" />
-			<result column="folder_createtime" jdbcType="TIMESTAMP" property="createtime" />
-			
-			<association property="folder_parent" javaType="com.zxd.zcloud.pojo.Folder">
-				<id column="fpid" jdbcType="INTEGER" property="id"/>
-				<result column="folder_parent_name" jdbcType="VARCHAR" property="foldername" />
-				<result column="folder_parent_createtime" jdbcType="TIMESTAMP" property="createtime" />
-			</association>
-		</collection>
+		<association property="root_folder" javaType="com.zxd.zcloud.pojo.Folder">
+			<id column="rfid" jdbcType="INTEGER" property="id"/>
+			<result column="folder_parent_name" jdbcType="VARCHAR" property="foldername" />
+			<result column="folder_parent_createtime" jdbcType="TIMESTAMP" property="createtime" />
+		</association>
+		
 	</resultMap>
 	
-	<insert id="insertSelective">
+	
+	<select id="">
+	
+	</select>
+	
+	
+	
+	<insert id="insertSelective"
+		useGeneratedKeys="true" keyProperty="id" keyColumn="id">
 		insert into user
 	    <trim prefix="(" suffix=")" suffixOverrides=",">
 	      <if test="id != null">
@@ -36,6 +39,9 @@
 	      </if>
 	      <if test="createtime != null">
 	        createtime,
+	      </if>
+	      <if test="rootFolder != null">
+	        root_folder,
 	      </if>
 	    </trim>
 	    <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -51,8 +57,27 @@
 	      <if test="createtime != null">
 	        #{createtime,jdbcType=TIMESTAMP},
 	      </if>
+	      <if test="rootFolder != null">
+	        #{rootFolder.id,jdbcType=INTEGER},
+	      </if>
 	    </trim>
 	</insert>
 
+
+	<update id="updateByUserNameSelective" parameterType="com.zxd.zcloud.pojo.User" >  
+    update user  
+    <set >  
+      <trim>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      
+      <if test="rootFolder != null">
+        root_folder = #{rootFolder.id,jdbcType=INTEGER},
+      </if>
+      </trim>  
+    </set>  
+    where username = #{username,jdbcType=VARCHAR}  
+  </update> 
  
 </mapper>

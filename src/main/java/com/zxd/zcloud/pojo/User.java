@@ -19,64 +19,55 @@ public class User {
 
     private Timestamp createtime;
     
-    private List<File> files;
-    
-    private List<Folder> folders;
+    private Folder rootFolder;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username == null ? null : username.trim();
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password == null ? null : password.trim();
-    }
-
-    public Timestamp getCreatetime() {
-        return createtime;
-    }
-
-    public void setCreatetime(Timestamp createtime) {
-        this.createtime = createtime;
-    }
-
-	public List<File> getFiles() {
-		return files;
+	public Integer getId() {
+		return id;
 	}
 
-	public void setFiles(List<File> files) {
-		this.files = files;
-	}
-	
-
-	public List<Folder> getFolders() {
-		return folders;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
-	public void setFolders(List<Folder> folders) {
-		this.folders = folders;
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public Timestamp getCreatetime() {
+		return createtime;
+	}
+
+	public void setCreatetime(Timestamp createtime) {
+		this.createtime = createtime;
+	}
+
+	public Folder getRootFolder() {
+		return rootFolder;
+	}
+
+	public void setRootFolder(Folder rootFolder) {
+		this.rootFolder = rootFolder;
 	}
 
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", username=" + username + ", password=" + password + ", createtime=" + createtime
-				+ ", files=" + files + ", folders=" + folders + "]";
+				+ ", rootFolder=" + rootFolder + "]";
 	}
+    
+    
 
 	
     

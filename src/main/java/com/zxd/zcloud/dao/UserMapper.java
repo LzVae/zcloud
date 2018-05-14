@@ -20,5 +20,16 @@ public interface UserMapper {
 	 * @return
 	 */
 	int insertSelective(User user);
+	
+	
+	/**
+	 * 有选择的修改
+	 * @Title: updateByUserNameSelective  
+	 * @Description: TODO
+	 * @return int  
+	 * @param username
+	 * @return
+	 */
+	int updateByUserNameSelective(User user);
     
 }

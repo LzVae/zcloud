@@ -59,4 +59,12 @@ public class Folder {
     public void setFolderCreatetime(Timestamp folderCreatetime) {
         this.folderCreatetime = folderCreatetime;
     }
+
+	@Override
+	public String toString() {
+		return "Folder [id=" + id + ", folderName=" + folderName + ", folderCreator=" + folderCreator.getUsername()
+				+ ", folderParent=" + folderParent + ", folderCreatetime=" + folderCreatetime + "]";
+	}
+    
+    
 }
