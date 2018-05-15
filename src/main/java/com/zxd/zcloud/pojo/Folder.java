@@ -73,7 +73,7 @@ public class Folder {
 	@Override
 	public String toString() {
 		return "Folder [id=" + id + ", folderUUID=" + folderUUID + ", folderName=" + folderName + ", folderCreator="
-				+ folderCreator.getUsername() + ", folderParent=" + folderParent + ", folderCreatetime=" + folderCreatetime + "]";
+				+ folderCreator + ", folderParent=" + folderParent + ", folderCreatetime=" + folderCreatetime + "]";
 	}
 
     

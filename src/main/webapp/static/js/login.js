@@ -25,5 +25,5 @@ $('#try-login').click(function(event) {
 		data: $('#login-form').serialize(),
 	});
 	
-
+	
 });

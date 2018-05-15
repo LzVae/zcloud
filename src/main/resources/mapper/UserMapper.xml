@@ -3,24 +3,27 @@
 <mapper namespace="com.zxd.zcloud.dao.UserMapper">
 
 	<!-- user的resultMap映射，不映射用户创建的文件，但映射用户创建的文件夹，后续通过文件夹来查询文件 -->
-	<resultMap id="BaseResultMap" type="com.zxd.zcloud.pojo.User">
+	<resultMap id="UserWithRootFolderResultMap" type="com.zxd.zcloud.pojo.User">
 		<id column="id" jdbcType="INTEGER" property="id" />
 		<result column="username" jdbcType="VARCHAR" property="username" />
 		<result column="password" jdbcType="VARCHAR" property="password" />
 		<result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
 		
-		<association property="root_folder" javaType="com.zxd.zcloud.pojo.Folder">
+		<association property="rootFolder" javaType="com.zxd.zcloud.pojo.Folder">
 			<id column="rfid" jdbcType="INTEGER" property="id"/>
-			<result column="folder_uuid" jdbcType="VARCHAR" property="folderUUID" />
-			<result column="folder_parent_name" jdbcType="VARCHAR" property="folderName" />
-			<result column="folder_parent_createtime" jdbcType="TIMESTAMP" property="folderCreatetime" />
+			<result column="rfuuid" jdbcType="VARCHAR" property="folderUUID" />
+			<result column="rfname" jdbcType="VARCHAR" property="folderName" />
+			<result column="rfcreatetime" jdbcType="TIMESTAMP" property="folderCreatetime" />
 		</association>
 		
 	</resultMap>
 	
 	
-	<select id="">
-	
+	<select id="selectByUserNameWithRootFolder" resultMap="UserWithRootFolderResultMap">
+		select u.*,
+		f.id 'rfid', f.folder_uuid 'rfuuid', f.folder_name 'rfname' ,f.folder_createtime 'rfcreatetime'
+			from user u left join folder f
+			on u.root_folder = f.folder_uuid
 	</select>
 	
 	

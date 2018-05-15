@@ -1,5 +1,7 @@
 package com.zxd.zcloud.dao;
 
+import java.util.List;
+
 import com.zxd.zcloud.pojo.User;
 
 /**
@@ -31,5 +33,17 @@ public interface UserMapper {
 	 * @return
 	 */
 	int updateByUserNameSelective(User user);
+	
+	/**
+	 * 根据用户名查询用户，顺带查询出该用户的文件夹根节点
+	 * @Title: selectByUserNameWithRootFolder  
+	 * @Description: TODO
+	 * @return List<User>  
+	 * @param username
+	 * @return
+	 */
+	List<User> selectByUserNameWithRootFolder(String username);
+	
+	
     
 }

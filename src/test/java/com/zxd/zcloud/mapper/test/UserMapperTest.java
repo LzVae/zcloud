@@ -129,5 +129,17 @@ public class UserMapperTest {
 		
 	}
 	
+	
+	@Test
+	public void testSelectByUserNameWithRootFolder() {
+		
+		User user = null;
+		user = userMapper.selectByUserNameWithRootFolder("root").get(0);
+		
+		System.out.println(user);
+		
+	}
+	
+	
 
 }
