@@ -1,6 +1,7 @@
 package com.zxd.zcloud.mapper.test;
 
 import java.sql.Timestamp;
+import java.util.UUID;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -83,6 +84,7 @@ public class UserMapperTest {
 		 * 为该用户增加文件夹根节点
 		 */
 		Folder folder = new Folder();
+		folder.setFolderUUID(UUID.randomUUID().toString());
 		folder.setFolderCreator(user);
 		folder.setFolderName("root");
 		folder.setFolderParent(null);
@@ -114,8 +116,8 @@ public class UserMapperTest {
 		
 		User user = new User();
 		
-		user.setUsername("admin2");
-		user.setPassword("admin4");
+		user.setUsername("admin1");
+		user.setPassword("admin2");
 		user.setCreatetime(new Timestamp(System.currentTimeMillis()));
 		user.setRootFolder(null);
 		

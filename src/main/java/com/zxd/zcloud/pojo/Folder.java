@@ -11,6 +11,8 @@ import java.sql.Timestamp;
  */
 public class Folder {
     private Integer id;
+    
+    private String folderUUID;
 
     private String folderName;
 
@@ -20,51 +22,62 @@ public class Folder {
 
     private Timestamp folderCreatetime;
 
-    public Integer getId() {
-        return id;
-    }
+	public Integer getId() {
+		return id;
+	}
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    public String getFolderName() {
-        return folderName;
-    }
+	public String getFolderUUID() {
+		return folderUUID;
+	}
 
-    public void setFolderName(String folderName) {
-        this.folderName = folderName == null ? null : folderName.trim();
-    }
+	public void setFolderUUID(String folderUUID) {
+		this.folderUUID = folderUUID;
+	}
 
-    public User getFolderCreator() {
-        return folderCreator;
-    }
+	public String getFolderName() {
+		return folderName;
+	}
 
-    public void setFolderCreator(User folderCreator) {
-        this.folderCreator = folderCreator;
-    }
+	public void setFolderName(String folderName) {
+		this.folderName = folderName;
+	}
 
-    public Folder getFolderParent() {
-        return folderParent;
-    }
+	public User getFolderCreator() {
+		return folderCreator;
+	}
 
-    public void setFolderParent(Folder folderParent) {
-        this.folderParent = folderParent;
-    }
+	public void setFolderCreator(User folderCreator) {
+		this.folderCreator = folderCreator;
+	}
 
-    public Timestamp getFolderCreatetime() {
-        return folderCreatetime;
-    }
+	public Folder getFolderParent() {
+		return folderParent;
+	}
 
-    public void setFolderCreatetime(Timestamp folderCreatetime) {
-        this.folderCreatetime = folderCreatetime;
-    }
+	public void setFolderParent(Folder folderParent) {
+		this.folderParent = folderParent;
+	}
+
+	public Timestamp getFolderCreatetime() {
+		return folderCreatetime;
+	}
+
+	public void setFolderCreatetime(Timestamp folderCreatetime) {
+		this.folderCreatetime = folderCreatetime;
+	}
 
 	@Override
 	public String toString() {
-		return "Folder [id=" + id + ", folderName=" + folderName + ", folderCreator=" + folderCreator.getUsername()
-				+ ", folderParent=" + folderParent + ", folderCreatetime=" + folderCreatetime + "]";
+		return "Folder [id=" + id + ", folderUUID=" + folderUUID + ", folderName=" + folderName + ", folderCreator="
+				+ folderCreator.getUsername() + ", folderParent=" + folderParent + ", folderCreatetime=" + folderCreatetime + "]";
 	}
+
+    
+	
     
     
 }

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>欢迎使用ZCLOUD网盘系统</title>
+	<!-- 加载jquery -->
+	<script type="text/javascript" src="static/js/jquery-3.2.1.min.js"></script>
+	<!-- 加载layui css -->
+	<link rel="stylesheet" href="static/layui/css/layui.css">
+	<link rel="stylesheet" type="text/css" href="static/css/style.css">
+</head>
+<body>
+	
+	<!-- 页面布局容器 -->
+	<div class="layui-container">
+	    
+	    <!-- 显示主页信息 -->
+	    <div class="layui-row">
+
+			<div class="layui-col-md10 layui-col-md-offset2"  style="margin-top: 12%">
+	            <i class="layui-icon layui-icon-home" style="font-size: 30px"></i> 
+	            <font style="font-size: 30px">ZCLOUD网盘系统</font>
+	        </div>
+
+	        <div class="layui-col-md10 layui-col-md-offset2" style="margin-top: 3%;">
+	            <button id="login-btn" class="layui-btn layui-btn-lg layui-btn-radius layui-btn-normal" style=" width: 200px">
+	            	登录
+	        	</button>
+	        </div>
+
+	        <div class="layui-col-md10 layui-col-md-offset2" style="margin-top: 1%;">	            
+	            <button id="register-btn" class="layui-btn layui-btn-lg layui-btn-radius layui-btn-danger" style=" width: 200px">
+	            	注册
+	            </button>
+	        </div>
+	    </div>
+	    <!-- 显示主页信息结束 -->
+	
+	    
+	</div>
+	<!-- 页面布局容器结束 -->
+
+
+	<!-- 用户登录的表单 -->
+	<form id="login-form" class="layui-form" action="" style="display: none;margin-top: 1%">
+
+		<div class="layui-form-item">
+			<label class="layui-form-label">用户名：</label>
+			<div class="layui-input-inline">
+			  <input type="text" name="username" required  lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+			</div>
+			<div class="layui-form-mid layui-word-aux">辅助文字</div>
+		</div>
+
+		<div class="layui-form-item">
+			<label class="layui-form-label">密码：</label>
+			<div class="layui-input-inline">
+			  <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+			</div>
+			<div class="layui-form-mid layui-word-aux">辅助文字</div>
+		</div>
+
+	 
+		<div class="layui-form-item">
+			<label class="layui-form-label">一周内自动登录</label>
+			<div class="layui-input-block">
+				<input type="checkbox" name="rememberme" lay-skin="switch">
+			</div>
+		</div>
+	  
+	 
+		<div class="layui-form-item">
+			<div class="layui-input-block">
+				<button id="try-login" type="button" class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+				<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+			</div>
+		</div>
+
+	</form>
+	<!-- 用户登录的表单结束 -->
+
+
+
+
+	
+
+
+		
+
+	
+</body>
+	<!-- 加载layui js -->
+	<script type="text/javascript" src="static/layui/layui.js"></script>
+	<script type="text/javascript" src="static/js/login.js"></script>
+</html>

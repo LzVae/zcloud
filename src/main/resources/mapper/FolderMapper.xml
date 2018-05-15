@@ -5,6 +5,7 @@
   <resultMap id="BaseResultMap" type="com.zxd.zcloud.pojo.Folder">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="folder_name" jdbcType="VARCHAR" property="folderName" />
+    <result column="folder_uuid" jdbcType="VARCHAR" property="folderUUID" />
     <result column="folder_createtime" jdbcType="TIMESTAMP" property="folderCreatetime" />
     
     <association property="folder_creator" javaType="com.zxd.zcloud.pojo.User">
@@ -24,8 +25,8 @@
   
   <insert id="insert"
   		useGeneratedKeys="true" keyProperty="id" keyColumn="id">
-  	insert into folder(folder_name, folder_creator, folder_parent, folder_createtime)
-  	values(#{folderName}, #{folderCreator.id}, #{folderParent.id}, #{folderCreatetime})
+  	insert into folder(folder_uuid,folder_name, folder_creator, folder_parent, folder_createtime)
+  	values(#{folderUUID},#{folderName}, #{folderCreator.id}, #{folderParent.id}, #{folderCreatetime})
   </insert>
   
   

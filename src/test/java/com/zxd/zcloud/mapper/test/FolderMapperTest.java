@@ -1,6 +1,7 @@
 package com.zxd.zcloud.mapper.test;
 
 import java.sql.Timestamp;
+import java.util.UUID;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -36,6 +37,7 @@ public class FolderMapperTest {
 		user.setId(1);
 		
 		Folder folder = new Folder();
+		folder.setFolderUUID(UUID.randomUUID().toString());
 		folder.setFolderName("root");
 		folder.setFolderCreator(user);
 		folder.setFolderParent(null);

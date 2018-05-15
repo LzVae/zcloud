@@ -11,8 +11,9 @@
 		
 		<association property="root_folder" javaType="com.zxd.zcloud.pojo.Folder">
 			<id column="rfid" jdbcType="INTEGER" property="id"/>
-			<result column="folder_parent_name" jdbcType="VARCHAR" property="foldername" />
-			<result column="folder_parent_createtime" jdbcType="TIMESTAMP" property="createtime" />
+			<result column="folder_uuid" jdbcType="VARCHAR" property="folderUUID" />
+			<result column="folder_parent_name" jdbcType="VARCHAR" property="folderName" />
+			<result column="folder_parent_createtime" jdbcType="TIMESTAMP" property="folderCreatetime" />
 		</association>
 		
 	</resultMap>
@@ -58,7 +59,7 @@
 	        #{createtime,jdbcType=TIMESTAMP},
 	      </if>
 	      <if test="rootFolder != null">
-	        #{rootFolder.id,jdbcType=INTEGER},
+	        #{rootFolder.UUID,jdbcType=VARCHAR},
 	      </if>
 	    </trim>
 	</insert>
@@ -73,7 +74,7 @@
       </if>
       
       <if test="rootFolder != null">
-        root_folder = #{rootFolder.id,jdbcType=INTEGER},
+        root_folder = #{rootFolder.folderUUID,jdbcType=VARCHAR},
       </if>
       </trim>  
     </set>  

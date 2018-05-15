@@ -6,13 +6,14 @@ create table user(
 	username varchar(50) not null,
 	password varchar(50) not null,
 	createtime timestamp not null default current_timestamp,
-	root_folder int(11)
+	root_folder varchar(128)
 )default charset='utf8';
 
 
 --  文件夹表      --
 create table folder(
 	id int(11) not null primary key auto_increment,
+	folder_uuid varchar(128) not null,
 	folder_name varchar(128) not null,
 	folder_creator int(11) not null,
 	folder_parent int(11),
