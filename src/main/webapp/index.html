@@ -43,14 +43,14 @@
 
 
 	<!-- 用户登录的表单 -->
-	<form id="login-form" class="layui-form" action="" style="display: none;margin-top: 1%">
+	<form id="login-form" class="layui-form" action="login" style="display: none;margin-top: 1%" method="post">
 
 		<div class="layui-form-item">
 			<label class="layui-form-label">用户名：</label>
 			<div class="layui-input-inline">
 			  <input type="text" name="username" required  lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
 			</div>
-			<div class="layui-form-mid layui-word-aux">辅助文字</div>
+			<div id="log-username-check-result" class="layui-form-mid" style="color: red;"></div>
 		</div>
 
 		<div class="layui-form-item">
@@ -58,14 +58,14 @@
 			<div class="layui-input-inline">
 			  <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
 			</div>
-			<div class="layui-form-mid layui-word-aux">辅助文字</div>
+			<div id="log-password-check-result" class="layui-form-mid" style="color: red;"></div>
 		</div>
 
 	 
 		<div class="layui-form-item">
 			<label class="layui-form-label">一周内自动登录</label>
 			<div class="layui-input-block">
-				<input type="checkbox" name="rememberme" lay-skin="switch">
+				<input type="checkbox" name="rememberMe" lay-skin="switch">
 			</div>
 		</div>
 	  

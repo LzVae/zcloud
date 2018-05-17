@@ -13,6 +13,7 @@ import com.zxd.zcloud.dao.FolderMapper;
 import com.zxd.zcloud.dao.UserMapper;
 import com.zxd.zcloud.pojo.Folder;
 import com.zxd.zcloud.pojo.User;
+import com.zxd.zcloud.util.MD5Util;
 
 /**
 * @Title: UserMapperTest.java  
@@ -70,7 +71,7 @@ public class UserMapperTest {
 		
 		User user = new User();
 		user.setUsername("root");
-		user.setPassword("root");
+		user.setPassword(MD5Util.getMD5("root"));
 		user.setCreatetime(new Timestamp(System.currentTimeMillis()));
 		
 		/**

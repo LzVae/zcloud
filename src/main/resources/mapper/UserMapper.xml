@@ -24,6 +24,7 @@
 		f.id 'rfid', f.folder_uuid 'rfuuid', f.folder_name 'rfname' ,f.folder_createtime 'rfcreatetime'
 			from user u left join folder f
 			on u.root_folder = f.folder_uuid
+			where u.username = #{username}
 	</select>
 	
 	
