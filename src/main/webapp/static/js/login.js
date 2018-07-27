@@ -38,5 +38,4 @@ $('#try-login').click(function(event) {
     
 		}
 	});
-
 });
